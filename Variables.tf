@@ -43,23 +43,3 @@ variable "node_specifications" {
   type        = tuple([string, number, bool])
   default     = ["node01", 8, false]
 }
-
-CHALLENGE 2
-
-# List variable with count
-variable " user_roles" {
-  description = "List of user roles."
-  type        = list(string)
-  default     = ["admin", "editor", "viewer"]
-}
-
-# Map variable with for_each
-variable "feature_toggles" {
-  description = "Configuration settings for app."
-  type        = map(string)
-  default     = { 
-    "signup_enabled" = "true"
-    "profile_editing_enabled" = "false"
-    "search_functionality_enabled" = "true"
- }
-}
