@@ -17,7 +17,7 @@ output "Group_Members" {
    Charlie Morse
 EOT
 
-# Map variable task
+# Map Variable with for_each
 resource "local_file" "feature_toggles" {
 for_each = var.feature_toggles
 filename = "${path.module}/${each.key}.txt"
