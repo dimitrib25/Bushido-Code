@@ -88,38 +88,3 @@ output "Group_Members" {
    Charlie Morse
 EOT
 
-#CHALLENGE 2
-
-# List variable with count
-resource "local_file" "user_role_files" {
-  count    = length(var.user_roles)
-  filename = "user-role-${var.user_roles[count.index]}.txt"
-  content  = "Role: ${var.user_roles[count.index]}"
-}
-output "terraform_group" {
-  value = "Bushido Code"
-}
-output "Group_Members" {
-  value =<<-EOT
-   Lynn Parrish
-   Dimitri Burrell
-   Christian Akanni
-   Charlie Morse
-EOT
-
-# Map variable task
-resource "local_file" "feature_toggles" {
-for_each = var.feature_toggles
-filename = "${path.module}/${each.key}.txt"
-content = "${each.key}: ${each.value}"
-}
-output "terraform_group" {
-  value = "Bushido Code"
-}
-output "Group_Members" {
-  value =<<-EOT
-   Lynn Parrish
-   Dimitri Burrell
-   Christian Akanni
-   Charlie Morse
-EOT
