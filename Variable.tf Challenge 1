@@ -41,5 +41,5 @@ variable "server_details" {
 variable "node_specifications" {
   description = "Specification for a node."
   type        = tuple([string, number, bool])
-  default     = ["node01", 8, false]
+  default     = ["node01", 4, false]
 }
